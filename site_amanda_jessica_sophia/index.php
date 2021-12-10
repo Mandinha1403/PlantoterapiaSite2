@@ -50,14 +50,14 @@ endif;
 <html>
 
     <head>
-        <link href="css/login.css" rel="stylesheet">
+        <link href="css/styles.css" rel="stylesheet">
         <meta charset="utf-8">
         <title> Plantoterapia </title>
     </head>
 
     <body>
 
-        <div class="container" >
+        <div class="login" >
              
             <div class="content">      
               <!--FORMULÁRIO DE LOGIN-->
