@@ -1,8 +1,22 @@
 <!DOCTYPE html>
 <html>
-    <?php include "./header.html" ?>
 
-    <!-- Não houve tempo de fazer a parte de visualização da planta registrada. -->
+    <head>
+        <link href="css/styles.css" rel="stylesheet">
 
-    <?php include "./footer.html" ?>
+        <meta charset="utf-8">
+        <title> Plantoterapia </title>
+
+
+    </head>
+
+    <body>
+        <?php include "./header.html" ?>
+
+        <!-- Não houve tempo de fazer a parte de visualização da planta registrada. -->
+
+        <?php include "./footer.html" ?>
+
+    </body>
+    
 </html>

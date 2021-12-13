@@ -26,36 +26,36 @@
 
                 <article> <li> <div class="planta"> 
                     
-                    <div class="imagem"> <a href="planta.html"> <img src="imagem\posts\1.jpeg"> </a> </div> 
-                    <div class="texto"> <a href="planta.html"> Boldo </a> </div>
+                    <div class="imagem"> <a href="planta.php"> <img src="imagem\posts\1.jpeg"> </a> </div> 
+                    <div class="texto"> <a href="planta.php"> Boldo </a> </div>
                 
                 </div> </li> </article>
 
                 <article> <li> <div class="planta"> 
                     
-                    <div class="imagem"> <a href="planta.html"> <img src="imagem\posts\2.jpeg"> </a> </div> 
-                    <div class="texto"> <a href="planta.html"> Cebolinha </a> </div>
+                    <div class="imagem"> <a href="planta.php"> <img src="imagem\posts\2.jpeg"> </a> </div> 
+                    <div class="texto"> <a href="planta.php"> Cebolinha </a> </div>
                 
                 </div> </li> </article>
 
                 <article><li> <div class="planta"> 
                     
-                    <div class="imagem"> <a href="planta.html"> <img src="imagem\posts\3.jpeg"> </a>  </div> 
-                    <div class="texto"> <a href="planta.html"> Pimenta-do-reino </a> </div>
+                    <div class="imagem"> <a href="planta.php"> <img src="imagem\posts\3.jpeg"> </a>  </div> 
+                    <div class="texto"> <a href="planta.php"> Pimenta-do-reino </a> </div>
                 
                 </div> </li> </article>
 
                 <article> <li> <div class="planta"> 
                     
-                    <div class="imagem"> <a href="planta.html"> <img src="imagem\posts\4.jpeg"> </a>  </div> 
-                    <div class="texto"> <a href="planta.html"> Tomate </a> </div>
+                    <div class="imagem"> <a href="planta.php"> <img src="imagem\posts\4.jpeg"> </a>  </div> 
+                    <div class="texto"> <a href="planta.php"> Tomate </a> </div>
                 
                 </div> </li> </article>
 
                 <article> <li> <div class="planta"> 
                     
-                    <div class="imagem"> <a href="planta.html"> <img src="imagem\posts\5.jpeg"> </a> </div> 
-                    <div class="texto"> <a href="planta.html"> Alho </a> </div>
+                    <div class="imagem"> <a href="planta.php"> <img src="imagem\posts\5.jpeg"> </a> </div> 
+                    <div class="texto"> <a href="planta.php"> Alho </a> </div>
                 
                 </div> </li> </article>
 

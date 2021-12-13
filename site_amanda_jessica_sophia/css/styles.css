@@ -1,6 +1,5 @@
 /* Página em geral */
 
-
 html, body{
 	margin: 0;
     padding: 0;
@@ -261,6 +260,13 @@ footer {
 .login p {
     margin-bottom:15px;
 }
+
+.login .content {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+}
    
 .login .content p:first-child {
     margin: 0px;
@@ -354,15 +360,12 @@ footer {
 
 /* CADASTRO */
 
-
 .cadastro html {
     display: table;
-    margin: auto;
 }
 
 .cadastro body {
     display: table-cell;
-    vertical-align: middle;
 }
 
 .cadastro a {
@@ -405,6 +408,13 @@ footer {
     margin-bottom:15px;
 }
    
+.cadastro .content {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+}
+
 .cadastro .content p:first-child {
     margin: 0px;
 }
@@ -487,13 +497,11 @@ footer {
 }
 
 .cadastro #registrar-se {
-  position: absolute;
-  top: 0px;
-  width: 88%;   
-  padding: 18px 6% 60px 6%;
-  margin: 0 0 0 0;
-  background: #FFDBDC;
-  border-radius: 5px;
+    width: 88%;  
+    padding: 18px 6% 60px 6%;
+    margin: 0 0 0 0;
+    background: #FFDBDC;
+    border-radius: 5px;
 }
 
 /* ADICIONAR PLANTA */

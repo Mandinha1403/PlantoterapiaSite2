@@ -1,0 +1,13 @@
+::1 - - [13/Dec/2021:10:44:23 -0300] "GET / HTTP/1.1" 200 1606
+::1 - - [13/Dec/2021:10:44:23 -0300] "GET /css/styles.css HTTP/1.1" 200 10787
+::1 - - [13/Dec/2021:10:44:38 -0300] "POST /index.php HTTP/1.1" 302 1745
+::1 - - [13/Dec/2021:10:44:38 -0300] "GET /home.php HTTP/1.1" 200 3242
+::1 - - [13/Dec/2021:10:44:38 -0300] "GET /imagem/logo.jpeg HTTP/1.1" 200 55254
+::1 - - [13/Dec/2021:10:44:38 -0300] "GET /imagem/posts/2.jpeg HTTP/1.1" 200 225202
+::1 - - [13/Dec/2021:10:44:38 -0300] "GET /imagem/instagram.png HTTP/1.1" 200 25194
+::1 - - [13/Dec/2021:10:44:38 -0300] "GET /imagem/posts/1.jpeg HTTP/1.1" 200 7868
+::1 - - [13/Dec/2021:10:44:38 -0300] "GET /imagem/posts/5.jpeg HTTP/1.1" 200 91536
+::1 - - [13/Dec/2021:10:44:38 -0300] "GET /imagem/posts/3.jpeg HTTP/1.1" 200 8655
+::1 - - [13/Dec/2021:10:44:38 -0300] "GET /imagem/posts/4.jpeg HTTP/1.1" 200 7525
+::1 - - [13/Dec/2021:10:44:41 -0300] "GET / HTTP/1.1" 200 1606
+::1 - - [13/Dec/2021:10:44:44 -0300] "POST /index.php HTTP/1.1" 200 1646

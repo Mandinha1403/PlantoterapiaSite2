@@ -17,10 +17,10 @@ if (isset($_POST['btn-entrar'])):
 
     else:
         // Criptografa a senha
-        $senha=md5($senha);
+        //$senha=md5($senha);
 
-        // Usuário: ??? / Senha: ???
-        $sql= "SELECT id, login FROM usuarios WHERE login= '$login' AND senha='$senha'";
+        // Usuário: email / Senha: senha
+        $sql= "SELECT * FROM conta WHERE email='$login' AND senha='$senha'";
         
         $resultado = mysqli_query($connect, $sql);
 
@@ -57,45 +57,47 @@ endif;
 
     <body>
 
-        <?php include "./header.html" ?>
-
         <div class="login" >
              
             <div class="content">      
               <!--FORMULÁRIO DE LOGIN-->
-              <div id="login">
+                <div id="login">
 
-            <?php
-                if(!empty($erros)):
-                    foreach($erros as $erro):
-                        echo $erro;
-                    endforeach;
-                endif;
-            ?>
+                    <?php
+                        if(!empty($erros)):
+                            foreach($erros as $erro):
+                                echo $erro;
+                            endforeach;
+                        endif;
+                    ?>
 
-            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST"> 
-                <h1> Login </h1>
+                    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST"> 
+                        <h1> Login </h1>
 
-                <p> 
-                    <label for="email_login"> E-mail </label>
-                    <input id="email_login" name="login" required="required" type="text" placeholder="Digite seu e-mail"/>
-                </p>
-                
-                <p> 
-                    <label for="senha_login"> Senha</label>
-                    <input id="senha_login" name="senha" required="required" type="password" placeholder="Digite sua senha" /> 
-                </p>
-                
-                <p> 
-                    <button type="submit" name="btn-entrar"> <a href="home.html"> Entrar </a> </button>
-                </p>
-                
-                <p class="link">
-                    Ainda não tem conta?
-                    <a href="registrar-se.html"> Registrar-se </a>
-                </p>
+                        <p> 
+                            <label for="email_login"> E-mail </label>
+                            <input id="email_login" name="login" required="required" type="text" placeholder="Digite seu e-mail"/>
+                        </p>
+                        
+                        <p> 
+                            <label for="senha_login"> Senha</label>
+                            <input id="senha_login" name="senha" required="required" type="password" placeholder="Digite sua senha" /> 
+                        </p>
+                        
+                        <p> 
+                            <button type="submit" name="btn-entrar"> Entrar </a> </button>
+                        </p>
+                        
+                        <p class="link">
+                            Ainda não tem conta?
+                            <a href="cadastro.php"> Registrar-se </a>
+                        </p>
 
-            </form>
+                    </form>
+
+                </div>
+
+            </div>
 
         </div>
 

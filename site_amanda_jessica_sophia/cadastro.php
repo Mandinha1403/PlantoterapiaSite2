@@ -9,8 +9,6 @@
 
     <body>
 
-      <?php include "./header.html" ?>
-
       <div class="cadastro" >
             
         <div class="content">      
@@ -29,12 +27,12 @@
               </p>
                 
               <p> 
-                <button type="entrar"> <a href="home.html"> Criar </a> </button>
+                <button type="entrar"> <a href="home.php"> Criar </a> </button>
               </p>
                 
               <p class="link">
                 Já tem conta?
-                <a href="index.html"> Login </a>
+                <a href="index.php"> Login </a>
               </p>
             </form>
 
