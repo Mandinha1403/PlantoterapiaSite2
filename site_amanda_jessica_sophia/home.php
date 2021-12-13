@@ -8,24 +8,8 @@
     </head>
 
     <body>
-        <div class="header">
-            <nav class="header_toolbar">
-
-                <div class="nav_opcao_esq"> 
-                    <div class="nav_opcao_esq_child"> <a href="home.html"> Home </a> </div> 
-                    <div class="nav_opcao_esq_child"> <a href="conhecaoprojeto.html"> Conheça o Projeto </a> </div> 
-                </div>
-
-                <div class="nav_opcao_meio"> <figure> <img id="logo" src="imagem\logo.jpeg"> </figure> </div>
-
-                <div class="nav_opcao_dir"> 
-                    <div class="nav_opcao_dir_child"> <a href="sobrenos.html"> Sobre Nós </a> </div>
-                    <div class="nav_opcao_esq_child"> <a href="https://www.instagram.com/ifesserra.plantoterapia/"> <img id="logo_insta" src="imagem\instagram.png"> </a> </div>
-                    <div class="nav_opcao_dir_child"> <a href="index.html"> Sair </a> </div> 
-                </div>
-
-            </nav>    
-        </div>
+        
+      <?php include "./header.html" ?>
 
 
       <div class="header_posts">
@@ -78,7 +62,7 @@
             </ul>
         </div>
 
-        <footer> Todos os direitos reservados </footer>
+        <?php include "./footer.html" ?>
 
     </body>
 

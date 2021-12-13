@@ -57,6 +57,8 @@ endif;
 
     <body>
 
+        <?php include "./header.html" ?>
+
         <div class="login" >
              
             <div class="content">      
@@ -97,6 +99,7 @@ endif;
 
         </div>
 
+        <?php include "./footer.html" ?>
 
     </body>
 
