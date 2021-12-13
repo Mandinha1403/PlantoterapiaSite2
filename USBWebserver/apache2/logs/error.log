@@ -1,5 +1,8 @@
-[Mon Dec 13 11:07:05.988895 2021] [mpm_winnt:notice] [pid 16176:tid 676] AH00455: Apache/2.4.6 (Win32) PHP/5.4.17 configured -- resuming normal operations
-[Mon Dec 13 11:07:05.988895 2021] [mpm_winnt:notice] [pid 16176:tid 676] AH00456: Apache Lounge VC10 Server built: Jul 16 2013 11:15:41
-[Mon Dec 13 11:07:05.988895 2021] [core:notice] [pid 16176:tid 676] AH00094: Command line: 'C:\\Users\\20191TIIMI0100\\Documents\\GitHub\\PlantoterapiaSite\\USBWebserver/apache2/bin/httpd_usbwv8.exe -d C:/Users/20191TIIMI0100/Documents/GitHub/PlantoterapiaSite/USBWebserver/apache2'
-[Mon Dec 13 11:07:06.004542 2021] [mpm_winnt:notice] [pid 16176:tid 676] AH00418: Parent: Created child process 16284
-[Mon Dec 13 11:07:06.405908 2021] [mpm_winnt:notice] [pid 16284:tid 844] AH00354: Child: Starting 64 worker threads.
+[Mon Dec 13 11:13:07.115374 2021] [mpm_winnt:notice] [pid 15196:tid 828] AH00455: Apache/2.4.6 (Win32) PHP/5.4.17 configured -- resuming normal operations
+[Mon Dec 13 11:13:07.115374 2021] [mpm_winnt:notice] [pid 15196:tid 828] AH00456: Apache Lounge VC10 Server built: Jul 16 2013 11:15:41
+[Mon Dec 13 11:13:07.115374 2021] [core:notice] [pid 15196:tid 828] AH00094: Command line: 'C:\\Users\\20191TIIMI0100\\Documents\\GitHub\\PlantoterapiaSite\\USBWebserver/apache2/bin/httpd_usbwv8.exe -d C:/Users/20191TIIMI0100/Documents/GitHub/PlantoterapiaSite/USBWebserver/apache2'
+[Mon Dec 13 11:13:07.131023 2021] [mpm_winnt:notice] [pid 15196:tid 828] AH00418: Parent: Created child process 4948
+[Mon Dec 13 11:13:07.800713 2021] [mpm_winnt:notice] [pid 4948:tid 844] AH00354: Child: Starting 64 worker threads.
+[Mon Dec 13 11:19:34.638619 2021] [mpm_winnt:warn] [pid 4948:tid 1588] (OS 64)O nome da rede especificado não está mais disponível.  : AH00341: winnt_accept: Asynchronous AcceptEx failed.
+[Mon Dec 13 11:19:34.638619 2021] [mpm_winnt:warn] [pid 4948:tid 1588] (OS 64)O nome da rede especificado não está mais disponível.  : AH00341: winnt_accept: Asynchronous AcceptEx failed.
+[Mon Dec 13 11:19:34.638619 2021] [mpm_winnt:warn] [pid 4948:tid 1588] (OS 64)O nome da rede especificado não está mais disponível.  : AH00341: winnt_accept: Asynchronous AcceptEx failed.

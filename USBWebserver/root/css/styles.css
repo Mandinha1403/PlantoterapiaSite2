@@ -48,6 +48,8 @@ body {
 
 .nav_opcao_meio {
     display: flex;	
+    align-items: center;
+    justify-content: center;
     width: 33.3%;
 }
 
@@ -614,47 +616,45 @@ footer {
 
 
 .conhecaoprojeto {
-    border-style: solid;
     font-size: 20pt;
+    padding: 0px;
 }
 
 /* Imagens redondas da horta */
 .conhecaoprojeto .parte1 {
-    border-style: solid;
     height: 200px;
-    margin-top: 20px;
+    margin-top: 35px;
 }
 
 
 .conhecaoprojeto .imagem_redonda {
     display: flex;
     justify-content: center;
-    width: 15%;
-    height: 50%;
+    width: 33%;
+    height: 100%;
     float: left;
-    border-style: solid;
 }
 
 .conhecaoprojeto .imagem_redonda img {
     border-radius: 50%;
-    width: 100%;
+    width: 33%;
     height: 100%;
 }
 
 /* Texto do projeto */
 
 .conhecaoprojeto .parte2 {
-    border-style: solid;
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
+    height: 500px;
+    display: block;
+    margin: 0px;
 }
 
 .conhecaoprojeto .texto_projeto {
-    border-style: solid;
-    width: 50%;
-    height: 100%;
+    float: left;
+    width: 30%;
+    height: 80%;
+    margin: 40px 0px 0px 150px;
     background-color: white;
     border-radius: 10px;
     padding: 10px;
