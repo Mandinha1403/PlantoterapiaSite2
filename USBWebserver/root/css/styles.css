@@ -214,12 +214,15 @@ footer {
 
 .login html {
     display: table;
-    margin: auto;
 }
 
-.login body {
-    display: table-cell;
-    vertical-align: middle;
+
+.login .aviso {
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #34c164;
 }
 
 .login a {
@@ -303,7 +306,7 @@ footer {
 
    
 /* Estilo do botão submit */
-.login button[type="submit"] {
+.login button[type="submit"] { 
     width: 100%!important;
     cursor: pointer;  
     background: #FF707A;
@@ -366,8 +369,13 @@ footer {
     display: table;
 }
 
-.cadastro body {
-    display: table-cell;
+
+.cadastro .aviso {
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #34c164;
 }
 
 .cadastro a {
@@ -450,7 +458,7 @@ footer {
 }
 
    
-.cadastro button[type="entrar"] {
+.cadastro button[type="submit"] {
     width: 100%!important;
     cursor: pointer;  
     background: #FF707A;
@@ -464,8 +472,7 @@ footer {
    
 }
    
-/* Estilo do botão submit no hover */
-.cadastro button[type="entrar"]:hover {
+.cadastro button[type="submit"]:hover {
     background: #FF4D52;
 }
 
@@ -508,50 +515,55 @@ footer {
 
 /* ADICIONAR PLANTA */
 
-.adicionarplanta body {
-	background-color: #CEFFC2;
-}
-
-/* Parte de adicionar informações */
 
 .adicionarplanta {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
     background-color: #FFDBDC;
-    width: 600px;
-    height: 600px;
-    padding: 1%;
-    border-radius: 4px;  
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    border-style: solid;
+    height: 500px;
+    border-radius: 10px;
+}
+
+.adicionarplanta .aviso {
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #34c164;
 }
 
 
 .adicionarplanta .item {
     width: 100%;
-    display: block;
-    border-style: solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
     
 }
 
+.adicionarplanta input[type="file"] {
+    margin-top: 15px;
+}
+
 .adicionarplanta input {
-    width: 100%;
+    width: 20%;
+    position: relative;
 }
 
 .adicionarplanta textarea {
-    width: 100%;
+    width: 90%;
+    height: 280px;
     resize: none;
 }
 
 .adicionarplanta button {
-    width: 90%;
+    width: 40%;
     height: 30%;
     background-color: #FF707A;
     font-size: 16pt;
     position: relative;
-    margin-top: 80px;
-    margin-left: 27px;
 }
 
 .adicionarplanta button a {
@@ -622,8 +634,8 @@ footer {
 
 /* Imagens redondas da horta */
 .conhecaoprojeto .parte1 {
-    height: 200px;
-    margin-top: 35px;
+    height: 150px;
+    margin-top: 10px;
 }
 
 
@@ -645,17 +657,51 @@ footer {
 
 .conhecaoprojeto .parte2 {
     width: 100%;
-    height: 500px;
+    height: 100%;
     display: block;
     margin: 0px;
 }
 
-.conhecaoprojeto .texto_projeto {
+.conhecaoprojeto .parte2filho {
+    width: 49%;
+    height: 350px;
+    display: flex;
     float: left;
-    width: 30%;
-    height: 80%;
-    margin: 40px 0px 0px 150px;
+    margin: 0px;
+}
+
+.conhecaoprojeto .texto_projeto {
+    width: 70%;
+    margin-top: 20px;
+    margin-right: 50px;
+    margin-left: auto;
     background-color: white;
+    display: flex;
+    align-items: center;
     border-radius: 10px;
     padding: 10px;
 }
+
+.conhecaoprojeto .imagem_livro {
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+.conhecaoprojeto .imagem_livro img {
+    width: 100%;
+    height: 100%;
+}
+
+.conhecaoprojeto .texto_livro {
+    width: 40%;
+    height: 50%;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 40px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px;
+}
+

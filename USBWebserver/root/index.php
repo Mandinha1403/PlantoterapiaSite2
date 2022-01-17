@@ -13,30 +13,43 @@ if (isset($_POST['btn-entrar'])):
 	
 	
 	if(empty($login) or empty($senha)):
-		$erros[] = "<li> O campo login/senha precisa ser preenchido </li>";
+		$erros[] = "Os campos login e senha precisam ser preenchido";
 
     else:
-        // Criptografa a senha
-        //$senha=md5($senha);
 
-        // Usuário: email / Senha: senha
-        $sql= "SELECT * FROM conta WHERE email='$login' AND senha='$senha'";
-        
-        $resultado = mysqli_query($connect, $sql);
+        // Sanitiza o email
+        $login = filter_var($login, FILTER_SANITIZE_EMAIL);
 
-        // Fecha a conexão depois de armazenar os dados
-        mysqli_close($connect);
-        
-        // Número de linhas do resultado da query maior que 0 ou Se houver algum registro na tabela
-        if (mysqli_num_rows($resultado) > 0):
-            $dados=mysqli_fetch_array($resultado);
-            $_SESSION['logado']= true;
-            $_SESSION['id_usuario']= $dados['id'];
-            // Comando que redireciona para página home.php
-            header('Location: home.php');		
+        // Valida o email
+        if (!filter_var($login, FILTER_VALIDATE_EMAIL)):
+            $erros[] = "Email inválido";
         
         else:
-            $erros[]="<li>Usuário e senha não conferem.</li>";
+
+            // Sanitiza a senha
+            $senha = filter_var($senha, FILTER_SANITIZE_STRING);
+
+            // Codifica a senha em md5
+            $senha = md5($senha);
+            
+            $sql= "SELECT * FROM conta WHERE email='$login' AND senha='$senha'";
+            
+            $resultado = mysqli_query($connect, $sql);
+
+            // Fecha a conexão depois de armazenar os dados
+            mysqli_close($connect);
+            
+            // Número de linhas do resultado da query maior que 0 ou Se houver algum registro na tabela
+            if (mysqli_num_rows($resultado) > 0):
+                $dados=mysqli_fetch_array($resultado);
+                // Comando que redireciona para página home.php
+                header('Location: home.php');		
+            
+            else:
+                $erros[]="Usuário e senha não conferem.";
+
+            endif;
+
 		endif;
 
 	endif;	
@@ -62,26 +75,28 @@ endif;
             <div class="content">      
               <!--FORMULÁRIO DE LOGIN-->
                 <div id="login">
+                    
+                    <div class="aviso">
+                        <?php
+                            if(!empty($erros)):
+                                foreach($erros as $erro):
+                                    echo $erro;
+                                endforeach;
+                            endif;
+                        ?>
+                    </div>
 
-                    <?php
-                        if(!empty($erros)):
-                            foreach($erros as $erro):
-                                echo $erro;
-                            endforeach;
-                        endif;
-                    ?>
-
-                    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST"> 
+                    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST"> 
                         <h1> Login </h1>
 
                         <p> 
                             <label for="email_login"> E-mail </label>
-                            <input id="email_login" name="login" required="required" type="text" placeholder="Digite seu e-mail"/>
+                            <input id="email_login" name="login" type="text" placeholder="Digite seu e-mail"/>
                         </p>
                         
                         <p> 
                             <label for="senha_login"> Senha</label>
-                            <input id="senha_login" name="senha" required="required" type="password" placeholder="Digite sua senha" /> 
+                            <input id="senha_login" name="senha" type="password" placeholder="Digite sua senha" /> 
                         </p>
                         
                         <p> 

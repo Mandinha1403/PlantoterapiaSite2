@@ -32,21 +32,24 @@
 
             <div class="parte2">
 
-                <div class="texto_projeto">
-                    <p> Plantoterapia é um projeto feito por estudantes do IFES Campus Serra que visa auxiliar outros alunos da professora de química Nauvia Maria Cancelieri e a comunidade em geral. Ele é baseado na horta cultivada no colégio, contando com a ajuda dos estudantes e também com a professora, cujo objetivo é armazenar as principais informações sobre as plantas cultivadas nessa horta. </p>
+                <div class="parte2filho">
+                    <div class="texto_projeto">
+                        <p> Plantoterapia é um projeto feito por estudantes do IFES Campus Serra que visa auxiliar outros alunos da professora de química Nauvia Maria Cancelieri e a comunidade em geral. Ele é baseado na horta cultivada no colégio, contando com a ajuda dos estudantes e também com a professora, cujo objetivo é armazenar as principais informações sobre as plantas cultivadas nessa horta. </p>
+                    </div>  
                 </div>
 
-                <div class="livro_nauvia">
+                <div class="parte2filho">
 
                     <div class="imagem_livro">
-
+                        <img src="imagem\livro_nauvia.jpeg">
                     </div>
 
                     <div class="texto_livro">
-
+                        <p> Compêndio: espécies de Rauvolfia <br> Autora Nauvia Maria Cancelieri </p>
                     </div>
 
                 </div>
+
 
             </div>
 

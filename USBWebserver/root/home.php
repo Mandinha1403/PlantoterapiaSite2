@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 
@@ -16,7 +18,7 @@
 
         <input type="text" placeholder="Pesquisar...">
         <button type="pesquisar" id="pesquisar"> Pesquisar </button>
-        <button type="adicionar_planta" id="adicionar_planta"> <a href="adicionarplanta.html"> Adicionar Planta </a> </button>
+        <a href="adicionarplanta.php"> <button type="adicionar_planta" id="adicionar_planta"> Adicionar Planta </button> </a>
 
       </div>
 
@@ -24,41 +26,38 @@
 
             <ul class="lista_plantas">
 
-                <article> <li> <div class="planta"> 
-                    
-                    <div class="imagem"> <a href="planta.php"> <img src="imagem\posts\1.jpeg"> </a> </div> 
-                    <div class="texto"> <a href="planta.php"> Boldo </a> </div>
-                
-                </div> </li> </article>
+                <?php
 
-                <article> <li> <div class="planta"> 
-                    
-                    <div class="imagem"> <a href="planta.php"> <img src="imagem\posts\2.jpeg"> </a> </div> 
-                    <div class="texto"> <a href="planta.php"> Cebolinha </a> </div>
-                
-                </div> </li> </article>
+                require_once 'db_connect.php';
 
-                <article><li> <div class="planta"> 
-                    
-                    <div class="imagem"> <a href="planta.php"> <img src="imagem\posts\3.jpeg"> </a>  </div> 
-                    <div class="texto"> <a href="planta.php"> Pimenta-do-reino </a> </div>
-                
-                </div> </li> </article>
+                session_start();
 
-                <article> <li> <div class="planta"> 
-                    
-                    <div class="imagem"> <a href="planta.php"> <img src="imagem\posts\4.jpeg"> </a>  </div> 
-                    <div class="texto"> <a href="planta.php"> Tomate </a> </div>
-                
-                </div> </li> </article>
+                $sql= "SELECT * FROM planta";
+                $resultado = mysqli_query($connect, $sql);
+                $rows = mysqli_num_rows($resultado);
 
-                <article> <li> <div class="planta"> 
-                    
-                    <div class="imagem"> <a href="planta.php"> <img src="imagem\posts\5.jpeg"> </a> </div> 
-                    <div class="texto"> <a href="planta.php"> Alho </a> </div>
-                
-                </div> </li> </article>
+                for($i = 1; $i <= $rows; $i++){
+                    $sql= "SELECT nome_planta FROM planta WHERE id_planta='$i'";
+                    $resultado = mysqli_query($connect, $sql);
+                    $nome = mysqli_fetch_array($resultado)[0];
 
+                    $sql= "SELECT foto_planta FROM planta WHERE id_planta='$i'";
+                    $foto = mysqli_query($connect, $sql);
+                
+
+                    echo 
+                    "<article> <li> <div class='planta'> 
+                        
+                        <div class='imagem'> <a href='planta.php'> <img src=''> </a> </div> 
+                        <div class='texto'> <a href='planta.php'> $nome </a> </div>
+                    
+                    </div> </li> </article>";
+                }
+
+
+                ?>
+
+               
             </ul>
         </div>
 
