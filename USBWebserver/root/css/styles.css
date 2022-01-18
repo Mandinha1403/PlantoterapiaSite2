@@ -705,3 +705,55 @@ footer {
     padding: 10px;
 }
 
+/* PLANTA */
+
+.planta_especifico {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: #FFDBDC;
+    height: 500px;
+    border-radius: 10px;
+}
+
+
+.planta_especifico .imagem {
+    height: 35%;
+    padding: 2px;
+    display: flex;
+    margin-left: 100px;
+    justify-content: center;
+}
+
+.planta_especifico button {
+    float: right;
+    background-color:#FF4D52;
+}
+
+.planta_especifico img {
+    height: 100%;
+}
+
+.planta_especifico .nome {
+    height: 10%;
+    width: 99.5%;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.planta_especifico p {
+    background-color: white;
+    border-radius: 10px;
+    padding: 8px;
+}
+
+.planta_especifico .texto {
+    height: 50%;
+    width: 98.5%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}

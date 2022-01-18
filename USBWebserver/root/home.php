@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
 
@@ -48,8 +46,8 @@
                     echo 
                     "<article> <li> <div class='planta'> 
                         
-                        <div class='imagem'> <a href='planta.php'> <img src=''> </a> </div> 
-                        <div class='texto'> <a href='planta.php'> $nome </a> </div>
+                        <div class='imagem'> <a href='planta.php?ap=$i'> <img src=''> </a> </div> 
+                        <div class='texto'> <a href='planta.php?ap=$i'> $nome </a> </div>
                     
                     </div> </li> </article>";
                 }

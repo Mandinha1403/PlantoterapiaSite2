@@ -7,11 +7,9 @@ session_start();
 // Verifica se na hora de clicar o botão "criar", todos os campos foram preenchidos
 if(isset($_POST['btn-criar'])):
 	$erros = array();
-	$foto = mysqli_escape_string($connect, $_POST['planta']);
+    $foto = mysqli_escape_string($connect, $_POST['planta']);
 	$nome = mysqli_escape_string($connect, $_POST['nomeplanta']);
     $informacoes = mysqli_escape_string($connect, $_POST['informacoes']);
-	
-      
 
 	if(empty($foto) or empty($nome) or empty($informacoes)):
 		$erros[] = "Todos os campos precisam estar preenchidos";
@@ -24,16 +22,16 @@ if(isset($_POST['btn-criar'])):
         
         else:
 
-            // Sanitiza o nome da planta e as informações sobre ela
+            // Sanitiza o nome da planta (não sanitiza as informações sobre ela para possibilitar quebras de parágrafo usando o <br>)
             $nome = filter_var($nome, FILTER_SANITIZE_STRING);
-            $informacoes = filter_var($informacoes, FILTER_SANITIZE_STRING);
+            
 
             // Descobre número de plantas já existentes
             $sql="SELECT * FROM planta";
             $resultado = mysqli_query($connect, $sql);
             $numero_plantas = mysqli_num_rows($resultado) + 1;
 
-            $sql="INSERT INTO planta(descricao_planta, foto_planta, id_planta, nome_planta) VALUES ('$informacoes', '$planta', '$numero_plantas', '$nome')";
+            $sql="INSERT INTO planta(descricao_planta, foto_planta, id_planta, nome_planta) VALUES ('$informacoes', '$foto', '$numero_plantas', '$nome')";
             
             mysqli_query($connect, $sql);
     
