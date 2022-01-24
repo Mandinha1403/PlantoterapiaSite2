@@ -21,34 +21,36 @@ if (isset($_POST['btn-entrar'])):
         $login = filter_var($login, FILTER_SANITIZE_EMAIL);
 
         // Valida o email
-        if (!filter_var($login, FILTER_VALIDATE_EMAIL)):
-            $erros[] = "Email inválido";
-        
-        else:
+		if (!filter_var($login, FILTER_VALIDATE_EMAIL)):
+		    $erros[] = "Email inválido";
 
-            // Sanitiza a senha
-            $senha = filter_var($senha, FILTER_SANITIZE_STRING);
+		else:
 
-            // Codifica a senha em md5
-            $senha = md5($senha);
-            
-            $sql= "SELECT * FROM conta WHERE email='$login' AND senha='$senha'";
-            
-            $resultado = pg_query($connect, $sql);
+		    // Sanitiza a senha
+		    $senha = filter_var($senha, FILTER_SANITIZE_STRING);
 
-            // Fecha a conexão depois de armazenar os dados
-            pg_close($connect);
-            
-            // Número de linhas do resultado da query maior que 0 ou Se houver algum registro na tabela
-            if (pg_num_rows($resultado) > 0):
-                $dados = pg_fetch_array($resultado);
-                // Comando que redireciona para página home.php
-                header('Location: home.php');		
-            
-            else:
-                $erros[]="Usuário e senha não conferem.";
+		    // Codifica a senha em md5
+		    $senha = md5($senha);
 
-            endif;
+		    $sql= "SELECT * FROM conta WHERE email='$login' AND senha='$senha'";
+
+		    $resultado = pg_query($connect, $sql);
+
+		    // Fecha a conexão depois de armazenar os dados
+		    pg_close($connect);
+
+		    // Número de linhas do resultado da query maior que 0 ou Se houver algum registro na tabela
+		    if (pg_num_rows($resultado) > 0):
+			$dados = pg_fetch_array($resultado);
+			// Comando que redireciona para página home.php
+			header('Location: home.php');		
+
+		    else:
+			$erros[]="Usuário e senha não conferem.";
+
+		    endif;
+
+            	endif;
 
 	endif;	
 
