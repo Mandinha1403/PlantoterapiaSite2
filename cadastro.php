@@ -16,43 +16,48 @@ if (isset($_POST['btn-criar'])):
   if(empty($login) or empty($senha) or empty($senha_conf)):
       $erros[] = "Todos os campos precisam ser preenchidos";
 
-  // Verifica se a senha foi confirmada corretamente
   else:
-    if(($senha) != ($senha_conf)):
-      $erros[] = "As senhas estão diferentes";
-    
-    else:
+      $sql = "SELECT email FROM conta WHERE email='$login'";
+      $usuario_existe = pg_query($connect, $sql);
 
-      // Sanitiza o email
-      $login = filter_var($login, FILTER_SANITIZE_EMAIL);
-
-      // Valida o email
-      if (!filter_var($login, FILTER_VALIDATE_EMAIL)):
-        $erros[] = "Email inválido";
-
+      // Verifica se o usuário já existe
+      if(pg_num_rows($usuario_existe) > 0):
+      	    $erros[] = "Usuário já existe";
+      // Verifica se a senha foi confirmada corretamente
       else:
+	    if(($senha) != ($senha_conf)):
+	      $erros[] = "As senhas estão diferentes";
 
-        // Sanitiza a senha
-        $senha = filter_var($senha, FILTER_SANITIZE_STRING);
+	    else:
 
-        // Codifica a senha em md5
-        $senha = md5($senha);
+	      // Sanitiza o email
+	      $login = filter_var($login, FILTER_SANITIZE_EMAIL);
 
-        $sql="INSERT INTO conta(email, senha) VALUES ('$login', '$senha')";
-          
-        pg_query($connect, $sql);
+	      // Valida o email
+	      if (!filter_var($login, FILTER_VALIDATE_EMAIL)):
+		$erros[] = "Email inválido";
 
-        // Fecha a conexão depois de armazenar os dados
-        pg_close($connect);
+	      else:
 
-        header('Location: home.php');	
+		// Sanitiza a senha
+		$senha = filter_var($senha, FILTER_SANITIZE_STRING);
 
-      endif;
+		// Codifica a senha em md5
+		$senha = md5($senha);
 
-    endif;
+		$sql="INSERT INTO conta(email, senha) VALUES ('$login', '$senha')";
 
-  endif;	
+		pg_query($connect, $sql);
 
+		// Fecha a conexão depois de armazenar os dados
+		pg_close($connect);
+
+		header('Location: home.php');	
+
+	      endif;
+	    endif;
+	  endif;	
+     endif;
 endif;	
 
 ?>
