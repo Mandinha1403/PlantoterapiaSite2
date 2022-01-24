@@ -15,7 +15,7 @@ if (isset($_POST['btn-entrar'])):
 	if(empty($login) or empty($senha)):
 		$erros[] = "Os campos login e senha precisam ser preenchido";
 
-    else:
+	else:
 
         // Sanitiza o email
         $login = filter_var($login, FILTER_SANITIZE_EMAIL);
@@ -49,8 +49,6 @@ if (isset($_POST['btn-entrar'])):
                 $erros[]="Usuário e senha não conferem.";
 
             endif;
-
-		endif;
 
 	endif;	
 
