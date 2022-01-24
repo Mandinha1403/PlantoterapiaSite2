@@ -2,7 +2,7 @@
 <html>
 
     <head>
-        <link href="css/styles.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
         <meta charset="utf-8">
         <title> Plantoterapia </title>
     </head>
@@ -31,16 +31,16 @@
                 session_start();
 
                 $sql= "SELECT * FROM planta";
-                $resultado = mysqli_query($connect, $sql);
-                $rows = mysqli_num_rows($resultado);
+                $resultado = pg_query($connect, $sql);
+                $rows = pg_num_rows($resultado);
 
                 for($i = 1; $i <= $rows; $i++){
                     $sql= "SELECT nome_planta FROM planta WHERE id_planta='$i'";
-                    $resultado = mysqli_query($connect, $sql);
-                    $nome = mysqli_fetch_array($resultado)[0];
+                    $resultado = pg_query($connect, $sql);
+                    $nome = pg_fetch_array($resultado)[0];
 
                     $sql= "SELECT foto_planta FROM planta WHERE id_planta='$i'";
-                    $foto = mysqli_query($connect, $sql);
+                    $foto = pg_query($connect, $sql);
                 
 
                     echo 

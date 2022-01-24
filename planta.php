@@ -6,8 +6,8 @@ session_start();
 
 
 $sql= "SELECT * FROM planta";
-$resultado = mysqli_query($connect, $sql);
-$rows = mysqli_num_rows($resultado);
+$resultado = pg_query($connect, $sql);
+$rows = pg_num_rows($resultado);
 
 for($i = 1; $i <= $rows; $i++){
     if($_GET['ap'] == $i):
@@ -19,19 +19,19 @@ for($i = 1; $i <= $rows; $i++){
 if(isset($_POST['btn-deletar'])):
     $numero_planta = $_SESSION['numero_planta'];
     $sql="DELETE FROM planta WHERE id_planta='$numero_planta'";
-    $resultado = mysqli_query($connect, $sql);
+    $resultado = pg_query($connect, $sql);
 
     $numero_novo = $numero_planta;
 
     // Muda a id de todas as outras plantas depois da planta deletada para um número abaixo do anterior
     for($j = $numero_planta + 1; $j <= $rows; $j++) {
         $sql="UPDATE planta SET id_planta='$numero_novo' WHERE id_planta='$j'";
-        $resultado = mysqli_query($connect, $sql);
+        $resultado = pg_query($connect, $sql);
         $numero_novo++;
     }
 
      // Fecha a conexão depois de armazenar os dados
-     mysqli_close($connect);
+     pg_close($connect);
 
     header('Location: home.php');	
 endif;
@@ -42,7 +42,7 @@ endif;
 <html>
 
     <head>
-        <link href="css/styles.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
         <meta charset="utf-8">
         <title> Plantoterapia </title>
 
@@ -66,17 +66,17 @@ endif;
 
             // Pega a foto da planta
             $sql= "SELECT foto_planta FROM planta WHERE id_planta='$i'";
-            $foto = mysqli_query($connect, $sql);
+            $foto = pg_query($connect, $sql);
 
             // Pega o nome da planta
             $sql= "SELECT nome_planta FROM planta WHERE id_planta='$numero_planta'";
-            $resultado = mysqli_query($connect, $sql);
-            $nome = mysqli_fetch_array($resultado)[0];
+            $resultado = pg_query($connect, $sql);
+            $nome = pg_fetch_array($resultado)[0];
 
             // Pega as informações da planta
             $sql= "SELECT descricao_planta FROM planta WHERE id_planta='$numero_planta'";
-            $resultado = mysqli_query($connect, $sql);
-            $informacoes = mysqli_fetch_array($resultado)[0];
+            $resultado = pg_query($connect, $sql);
+            $informacoes = pg_fetch_array($resultado)[0];
 
             echo "
             <div class='imagem'> <img src='foto.jpeg'>  </div> 
