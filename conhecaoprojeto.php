@@ -2,7 +2,7 @@
 <html>
 
     <head>
-        <link href="css/styles.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
         <meta charset="utf-8">
         <title> Plantoterapia </title>
     </head>
@@ -17,15 +17,15 @@
             <div class="parte1">
 
                 <div class="imagem_redonda">
-                    <img src="imagem\horta\1.jpeg">
+                    <img src="1.jpeg">
                 </div>
 
                 <div class="imagem_redonda">
-                    <img src="imagem\horta\2.jpeg">
+                    <img src="2.jpeg">
                 </div>
 
                 <div class="imagem_redonda">
-                    <img src="imagem\horta\3.jpeg">
+                    <img src="3.jpeg">
                 </div>
 
             </div>
@@ -41,7 +41,7 @@
                 <div class="parte2filho">
 
                     <div class="imagem_livro">
-                        <img src="imagem\livro_nauvia.jpeg">
+                        <img src="livro_nauvia.jpeg">
                     </div>
 
                     <div class="texto_livro">
