@@ -6,15 +6,15 @@ session_start();
 
 // Verifica se na hora de clicar o botão "criar", todos os campos foram preenchidos
 if (isset($_POST['btn-criar'])):
-	//echo "Clicou";
-	$erros = array();
-	$login = mysqli_escape_string($connect, $_POST['login']);
-	$senha = mysqli_escape_string($connect, $_POST['senha']);
-  $senha_conf = mysqli_escape_string($connect, $_POST['senha_conf']);
+  //echo "Clicou";
+  $erros = array();
+  $login = pg_escape_string($connect, $_POST['login']);
+  $senha = pg_escape_string($connect, $_POST['senha']);
+  $senha_conf = pg_escape_string($connect, $_POST['senha_conf']);
 	
 
-	if(empty($login) or empty($senha) or empty($senha_conf)):
-		$erros[] = "Todos os campos precisam ser preenchidos";
+  if(empty($login) or empty($senha) or empty($senha_conf)):
+      $erros[] = "Todos os campos precisam ser preenchidos";
 
   // Verifica se a senha foi confirmada corretamente
   else:
@@ -40,10 +40,10 @@ if (isset($_POST['btn-criar'])):
 
         $sql="INSERT INTO conta(email, senha) VALUES ('$login', '$senha')";
           
-        mysqli_query($connect, $sql);
+        pg_query($connect, $sql);
 
         // Fecha a conexão depois de armazenar os dados
-        mysqli_close($connect);
+        pg_close($connect);
 
         header('Location: home.php');	
 
@@ -61,7 +61,7 @@ endif;
 <html>
 
     <head>
-        <link href="css/styles.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
         <meta charset="utf-8">
         <title> Plantoterapia </title>
     </head>
