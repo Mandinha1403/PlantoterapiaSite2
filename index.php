@@ -8,8 +8,8 @@ session_start();
 if (isset($_POST['btn-entrar'])):
 	//echo "Clicou";
 	$erros = array();
-	$login = pg_escape_string(getdb(), $_POST['login']);
-	$senha = pg_escape_string(getdb(), $_POST['senha']);
+	$login = pg_escape_string($connect, $_POST['login']);
+	$senha = pg_escape_string($connect, $_POST['senha']);
 	
 	
 	if(empty($login) or empty($senha)):
@@ -34,10 +34,10 @@ if (isset($_POST['btn-entrar'])):
             
             $sql= "SELECT * FROM conta WHERE email='$login' AND senha='$senha'";
             
-            $resultado = pg_query(getdb(), $sql);
+            $resultado = pg_query($connect, $sql);
 
             // Fecha a conexão depois de armazenar os dados
-            pg_close(getdb());
+            pg_close($connect);
             
             // Número de linhas do resultado da query maior que 0 ou Se houver algum registro na tabela
             if (pg_num_rows($resultado) > 0):
