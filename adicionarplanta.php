@@ -6,10 +6,10 @@ session_start();
 
 // Verifica se na hora de clicar o botão "criar", todos os campos foram preenchidos
 if(isset($_POST['btn-criar'])):
-	$erros = array();
-    $foto = mysqli_escape_string($connect, $_POST['planta']);
-	$nome = mysqli_escape_string($connect, $_POST['nomeplanta']);
-    $informacoes = mysqli_escape_string($connect, $_POST['informacoes']);
+    $erros = array();
+    $foto = pg_escape_string($connect, $_POST['planta']);
+    $nome = pg_escape_string($connect, $_POST['nomeplanta']);
+    $informacoes = pg_escape_string($connect, $_POST['informacoes']);
 
 	if(empty($foto) or empty($nome) or empty($informacoes)):
 		$erros[] = "Todos os campos precisam estar preenchidos";
@@ -28,15 +28,15 @@ if(isset($_POST['btn-criar'])):
 
             // Descobre número de plantas já existentes
             $sql="SELECT * FROM planta";
-            $resultado = mysqli_query($connect, $sql);
-            $numero_plantas = mysqli_num_rows($resultado) + 1;
+            $resultado = pg_query($connect, $sql);
+            $numero_plantas = pg_num_rows($resultado) + 1;
 
             $sql="INSERT INTO planta(descricao_planta, foto_planta, id_planta, nome_planta) VALUES ('$informacoes', '$foto', '$numero_plantas', '$nome')";
             
-            mysqli_query($connect, $sql);
+            pg_query($connect, $sql);
     
             // Fecha a conexão depois de armazenar os dados
-            mysqli_close($connect);
+            pg_close($connect);
     
             header('Location: home.php');	
 
@@ -53,7 +53,7 @@ endif;
 <html>
 
     <head>
-        <link href="css/styles.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
         <meta charset="utf-8">
         <title> Plantoterapia </title>
 
