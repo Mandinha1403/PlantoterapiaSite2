@@ -34,14 +34,14 @@ if (isset($_POST['btn-entrar'])):
             
             $sql= "SELECT * FROM conta WHERE email='$login' AND senha='$senha'";
             
-            $resultado = mysqli_query($connect, $sql);
+            $resultado = pg_query($connect, $sql);
 
             // Fecha a conexão depois de armazenar os dados
-            mysqli_close($connect);
+            pg_close($connect);
             
             // Número de linhas do resultado da query maior que 0 ou Se houver algum registro na tabela
-            if (mysqli_num_rows($resultado) > 0):
-                $dados=mysqli_fetch_array($resultado);
+            if (pg_num_rows($resultado) > 0):
+                $dados = pg_fetch_array($resultado);
                 // Comando que redireciona para página home.php
                 header('Location: home.php');		
             
