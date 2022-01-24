@@ -8,8 +8,8 @@ session_start();
 if (isset($_POST['btn-entrar'])):
 	//echo "Clicou";
 	$erros = array();
-	$login = mysqli_escape_string($connect, $_POST['login']);
-	$senha = mysqli_escape_string($connect, $_POST['senha']);
+	$login = pg_escape_string($connect, $_POST['login']);
+	$senha = pg_escape_string($connect, $_POST['senha']);
 	
 	
 	if(empty($login) or empty($senha)):
