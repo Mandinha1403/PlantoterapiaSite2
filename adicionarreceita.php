@@ -17,7 +17,7 @@ if(isset($_POST['btn-criar'])):
     else:
 
         if (!preg_match("/^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/", $nome)):
-            $erros[] = "O nome pode ter apenas letras e espaçps";
+            $erros[] = "O nome pode ter apenas letras e espaços";
         
         
         else:
@@ -34,7 +34,6 @@ if(isset($_POST['btn-criar'])):
             $id_planta = $_SESSION['numero_planta'];
 
             $sql="INSERT INTO post(id_post, id_planta, id_tppost, nome_post, descricao_post, foto_post) VALUES ('$numero_plantas', '$id_planta', 3, '$nome', $informacoes, $foto)";
-            
             pg_query($connect, $sql);
     
             // Fecha a conexão depois de armazenar os dados
