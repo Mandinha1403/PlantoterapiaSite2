@@ -31,31 +31,16 @@
                 session_start();
 
                 $planta_atual = $_SESSION['numero_planta'];
-                //
-                echo $planta_atual;
-                echo gettype($planta_atual);
-
-                $sql= "SELECT * FROM post";
-                $resultado = pg_query($connect, $sql);
-                $rows = pg_num_rows($resultado);
-
-                $sql= "SELECT id_planta FROM post WHERE id_post'$i'";
-                $resultado = pg_query($connect, $sql);
-                $planta_mae = pg_fetch_array($resultado)[0];
-
-                echo $planta_mae;
-                echo gettype($planta_mae);
-
 
                 for($i = 1; $i <= $rows; $i++){
                     $sql= "SELECT nome_post FROM post WHERE id_post='$i'";
                     $resultado = pg_query($connect, $sql);
                     $nome = pg_fetch_array($resultado)[0];
 
-                    $sql= "SELECT foto_post FROM post WHERE id_post'$i'";
+                    $sql= "SELECT foto_post FROM post WHERE id_post='$i'";
                     $foto = pg_query($connect, $sql);
 
-                    $sql= "SELECT id_planta FROM post WHERE id_post'$i'";
+                    $sql= "SELECT id_planta FROM post WHERE id_post='$i'";
                     $resultado = pg_query($connect, $sql);
                     $planta_mae = pg_fetch_array($resultado)[0];
             
