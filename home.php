@@ -87,7 +87,7 @@ endif;
                     $layout = 1;
                     */
 
-                    while($row = mysqli_fetch_assoc($numero_plantas)) {
+                    while($row = mysqli_fetch_assoc($resultado_plantas)) {
                         echo "ola";
                     }
                     /*
