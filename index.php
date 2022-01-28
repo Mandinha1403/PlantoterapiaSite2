@@ -81,7 +81,7 @@ endif;
                     
                     <div class="aviso">
                         <?php
-                            if(!empty($erros)):
+                            if(!empty($erros["error"])):
                                 foreach($erros as $erro):
                                     echo $erro;
                                 endforeach;
