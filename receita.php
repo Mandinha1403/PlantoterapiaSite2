@@ -11,13 +11,13 @@ $rows = pg_num_rows($resultado);
 
 for($i = 1; $i <= $rows; $i++){
     if($_GET['ap'] == $i):
-        $_SESSION['numero_receita'] = $i;
+        $_SESSION['numero_post'] = $i;
     endif;
 }
 
 // Código para deletar a planta
 if(isset($_POST['btn-deletar'])):
-    $numero_receita = $_SESSION['numero_receita'];
+    $numero_receita = $_SESSION['numero_post'];
     $sql="DELETE FROM post WHERE id_post=3";
     $resultado = pg_query($connect, $sql);
 
@@ -33,7 +33,7 @@ if(isset($_POST['btn-deletar'])):
      // Fecha a conexão depois de armazenar os dados
      pg_close($connect);
 
-    header('Location: home.php');	
+    header('Location: rececitas.php');	
 endif;
 
 ?>
@@ -57,29 +57,24 @@ endif;
             <button type="submit" name="btn-deletar"> Deletar Planta </button>
             </form>
 
-
-            <a href="adicionarestruturaquimica.php"> <button type="button" class="posts"> Estruturas Quimicas </button> </a>
-            <a href="adicionarmodoplantio.php"> <button type="button" class="posts"> Modos de Plantio </button> </a>
-            <a href="adicionarreceita.php"> <button type="button" class="posts"> Receitas </button> </a>
-
             <?php
 
             require_once 'db_connect.php';
 
-            $numero_planta = $_SESSION['numero_planta'];
+            $numero_receita = $_SESSION['numero_post'];
 
 
             // Pega a foto da planta
-            $sql= "SELECT foto_planta FROM planta WHERE id_planta='$i'";
+            $sql= "SELECT foto_post FROM post WHERE id_post='$numero_receita'";
             $foto = pg_query($connect, $sql);
 
             // Pega o nome da planta
-            $sql= "SELECT nome_planta FROM planta WHERE id_planta='$numero_planta'";
+            $sql= "SELECT nome_post FROM post WHERE id_post='$numero_receita'";
             $resultado = pg_query($connect, $sql);
             $nome = pg_fetch_array($resultado)[0];
 
             // Pega as informações da planta
-            $sql= "SELECT descricao_planta FROM planta WHERE id_planta='$numero_planta'";
+            $sql= "SELECT descricao_planta FROM planta WHERE id_planta='$numero_receita'";
             $resultado = pg_query($connect, $sql);
             $informacoes = pg_fetch_array($resultado)[0];
 
