@@ -33,7 +33,7 @@ if(isset($_POST['btn-deletar'])):
      // Fecha a conexão depois de armazenar os dados
      pg_close($connect);
 
-    header('Location: rececitas.php');	
+    header('Location: receitas.php');	
 endif;
 
 ?>
@@ -54,7 +54,7 @@ endif;
         <div class="planta_especifico">
 
             <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST"> 
-            <button type="submit" name="btn-deletar"> Deletar Planta </button>
+            <button type="submit" name="btn-deletar"> Deletar Receita </button>
             </form>
 
             <?php
@@ -74,7 +74,7 @@ endif;
             $nome = pg_fetch_array($resultado)[0];
 
             // Pega as informações da planta
-            $sql= "SELECT descricao_planta FROM planta WHERE id_planta='$numero_receita'";
+            $sql= "SELECT descricao_post FROM post WHERE id_post='$numero_receita'";
             $resultado = pg_query($connect, $sql);
             $informacoes = pg_fetch_array($resultado)[0];
 
