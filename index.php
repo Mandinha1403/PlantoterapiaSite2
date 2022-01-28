@@ -6,8 +6,6 @@ session_start();
 
 $erros = array();
 
-$erros["success"] = 1;
-
 // Verifica se na hora de clicar o botão "entrar", todos os campos foram preenchidos
 if (isset($_POST['btn-entrar'])):
 	//echo "Clicou";
@@ -16,7 +14,7 @@ if (isset($_POST['btn-entrar'])):
 	
 	
 	if(empty($login) or empty($senha)):
-		$erros["error"] = "Os campos login e senha precisam ser preenchido";
+		$erros = "Os campos login e senha precisam ser preenchido";
 
 	else:
 
@@ -25,7 +23,7 @@ if (isset($_POST['btn-entrar'])):
 
         // Valida o email
 		if (!filter_var($login, FILTER_VALIDATE_EMAIL)):
-		    $erros["error"] = "Email inválido";
+		    $erros = "Email inválido";
 
 		else:
 
@@ -49,7 +47,7 @@ if (isset($_POST['btn-entrar'])):
 			header('Location: home.php');		
 
 		    else:
-			$erros["error"]="Usuário e senha não conferem.";
+			$erros="Usuário e senha não conferem.";
 
 		    endif;
 
@@ -81,8 +79,8 @@ endif;
                     
                     <div class="aviso">
                         <?php
-                            if(!empty($erros["error"])):
-                                foreach($erros["error"] as $erro):
+                            if(!empty($erros)):
+                                foreach($erros as $erro):
                                     echo $erro;
                                 endforeach;
                             endif;
