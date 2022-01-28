@@ -15,10 +15,6 @@ if(isset($_POST['btn-pesquisar'])):
     $resultado_plantas = pg_query($connect, $sql);
     $numero_plantas = pg_num_rows($resultado_plantas);
 
-    $nome_planta = pg_fetch_array($resultado_plantas);
-    echo $nome_planta[0];
-    echo $nome_planta[1];
-
     $layout = 1;
 
 endif;	
@@ -91,13 +87,13 @@ endif;
                     $layout = 1;
                     */
 
-                    
-                    for($i = 1; $i <= $numero_plantas; $i++){
-                        //$nome_planta = pg_fetch_array($resultado_plantas)[$i];
-
+                    while($row = mysqli_fetch_assoc($numero_plantas)) {
+                        var_dump($row);
+                    }
+                    /*
                         $sql= "SELECT nome_planta FROM planta WHERE id_planta='$i'";
                         $resultado = pg_query($connect, $sql);
-                        //$nome_planta = pg_fetch_array($resultado)[0];
+                        $nome_planta = pg_fetch_array($resultado)[0];
 
                         $sql= "SELECT foto_planta FROM planta WHERE id_planta='$i'";
                         $foto = pg_query($connect, $sql);
@@ -111,7 +107,7 @@ endif;
                         
                         </div> </li> </article>";
                     
-                    }
+                    }*/
                 }
                 
             
