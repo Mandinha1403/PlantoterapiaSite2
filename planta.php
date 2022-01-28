@@ -54,13 +54,13 @@ endif;
         <div class="planta_especifico">
 
             <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST"> 
-            <button type="submit" name="btn-deletar"> Deletar Planta </button>
+            <button type="submit" name="btn-deletar" id="deletar"> Deletar Planta </button>
             </form>
 
 
-            <a href="adicionarestruturaquimica.php"> <button type="button" class="posts"> Estruturas Quimicas </button> </a>
-            <a href="adicionarmodoplantio.php"> <button type="button" class="posts"> Modos de Plantio </button> </a>
-            <a href="adicionarreceita.php"> <button type="button" class="posts"> Receitas </button> </a>
+            <a href="estruturasquimicas.php"> <button type="button" class="posts"> Estruturas Quimicas </button> </a>
+            <a href="modosplantio.php"> <button type="button" class="posts"> Modos de Plantio </button> </a>
+            <a href="receitas.php"> <button type="button" class="posts"> Receitas </button> </a>
 
             <?php
 

@@ -729,7 +729,7 @@ footer {
     justify-content: center;
 }
 
-.planta_especifico button {
+.planta_especifico #deletar {
     float: right;
     background-color:#FF4D52;
 }
