@@ -16,7 +16,8 @@ if(isset($_POST['btn-pesquisar'])):
     $numero_plantas = pg_num_rows($resultado_plantas);
 
     $nome_planta = pg_fetch_array($resultado_plantas);
-    echo $nome_planta;
+    echo $nome_planta[0];
+    echo $nome_planta[1];
 
     $layout = 1;
 
