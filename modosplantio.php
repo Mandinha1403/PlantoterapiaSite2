@@ -17,7 +17,7 @@
         <input type="text" placeholder="Pesquisar..." name="pesquisa"> 
         <button type="submit" id="pesquisar" name="btn-pesquisar"> Pesquisar </button>
         </form>
-        <a href="adicionarestruturaquimica.php"> <button type="adicionar_planta" id="adicionar_planta"> Adicionar Estrutura Quimica </button> </a>
+        <a href="adicionarmodoplantio.php"> <button type="adicionar_planta" id="adicionar_planta"> Adicionar Modo de Plantio </button> </a>
       </div>
 
       <div class="plantas">
@@ -35,7 +35,7 @@
                 $rows = pg_num_rows($resultado);
 
                 for($i = 1; $i <= $rows; $i++){
-                    $sql= "SELECT nome_post FROM post WHERE id_post='$i' AND id_tppost=1";
+                    $sql= "SELECT nome_post FROM post WHERE id_post='$i'";
                     $resultado = pg_query($connect, $sql);
                     $nome = pg_fetch_array($resultado)[0];
 
@@ -46,8 +46,8 @@
                     echo 
                     "<article> <li> <div class='planta'> 
                         
-                        <div class='imagem'> <a href='estruturaquimica.php?ap=$i'> <img src=''> </a> </div> 
-                        <div class='texto'> <a href='estruturaquimica.php?ap=$i'> $nome </a> </div>
+                        <div class='imagem'> <a href='modoplantio.php?ap=$i'> <img src=''> </a> </div> 
+                        <div class='texto'> <a href='modoplantio.php?ap=$i'> $nome </a> </div>
                     
                     </div> </li> </article>";
                     

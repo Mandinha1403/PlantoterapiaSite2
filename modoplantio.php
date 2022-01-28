@@ -15,16 +15,16 @@ for($i = 1; $i <= $rows; $i++){
     endif;
 }
 
-// Código para deletar a estrutura química
+// Código para deletar o modo de plantio
 if(isset($_POST['btn-deletar'])):
-    $numero_estruturaquimica = $_SESSION['numero_post'];
-    $sql="DELETE FROM post WHERE id_post=$numero_estruturaquimica";
+    $numero_modoplantio = $_SESSION['numero_post'];
+    $sql="DELETE FROM post WHERE id_post=$numero_modoplantio";
     $resultado = pg_query($connect, $sql);
 
-    $numero_novo = $numero_estruturaquimica;
+    $numero_novo = $numero_modoplantio;
 
     // Muda a id de todas as outras plantas depois da planta deletada para um número abaixo do anterior
-    for($j = $numero_estruturaquimica + 1; $j <= $rows; $j++) {
+    for($j = $numero_modoplantio + 1; $j <= $rows; $j++) {
         $sql="UPDATE post SET id_post='$numero_novo' WHERE id_post='$j'";
         $resultado = pg_query($connect, $sql);
         $numero_novo++;
@@ -33,7 +33,7 @@ if(isset($_POST['btn-deletar'])):
      // Fecha a conexão depois de armazenar os dados
      pg_close($connect);
 
-    header('Location: estruturasquimicas.php');	
+    header('Location: modosplantio.php');	
 endif;
 
 ?>
@@ -54,27 +54,27 @@ endif;
         <div class="planta_especifico">
 
             <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST"> 
-            <button type="submit" name="btn-deletar"> Deletar Estrutura Química </button>
+            <button type="submit" name="btn-deletar"> Deletar Modo de Plantio </button>
             </form>
 
             <?php
 
             require_once 'db_connect.php';
 
-            $numero_estruturaquimica = $_SESSION['numero_post'];
+            $numero_modoplantio = $_SESSION['numero_post'];
 
 
             // Pega a foto da planta
-            $sql= "SELECT foto_post FROM post WHERE id_post='$numero_estruturaquimica'";
+            $sql= "SELECT foto_post FROM post WHERE id_post='$numero_modoplantio'";
             $foto = pg_query($connect, $sql);
 
             // Pega o nome da planta
-            $sql= "SELECT nome_post FROM post WHERE id_post='$numero_estruturaquimica'";
+            $sql= "SELECT nome_post FROM post WHERE id_post='$numero_modoplantio'";
             $resultado = pg_query($connect, $sql);
             $nome = pg_fetch_array($resultado)[0];
 
             // Pega as informações da planta
-            $sql= "SELECT descricao_post FROM post WHERE id_post='$numero_estruturaquimica'";
+            $sql= "SELECT descricao_post FROM post WHERE id_post='$numero_modoplantio'";
             $resultado = pg_query($connect, $sql);
             $informacoes = pg_fetch_array($resultado)[0];
 
