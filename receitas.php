@@ -30,6 +30,8 @@
 
                 session_start();
 
+                $planta_atual = $_SESSION['numero_planta'];
+
                 $sql= "SELECT * FROM post";
                 $resultado = pg_query($connect, $sql);
                 $rows = pg_num_rows($resultado);
@@ -44,11 +46,11 @@
 
                     $sql= "SELECT id_planta FROM post WHERE id_post'$i'";
                     $resultado = pg_query($connect, $sql);
-                    $planta_mae = int(pg_fetch_array($resultado)[0]);
+                    $planta_mae = pg_fetch_array($resultado)[0];
             
 
 
-                    if($_SESSION['numero_planta'] == $planta_mae) {
+                    if($planta_atual == $planta_mae) {
                         echo 
                         "<article> <li> <div class='planta'> 
                             
