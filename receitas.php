@@ -41,15 +41,21 @@
 
                     $sql= "SELECT foto_post FROM post WHERE id_post'$i'";
                     $foto = pg_query($connect, $sql);
-                
-                
-                    echo 
-                    "<article> <li> <div class='planta'> 
-                        
-                        <div class='imagem'> <a href='receita.php?ap=$i'> <img src=''> </a> </div> 
-                        <div class='texto'> <a href='receita.php?ap=$i'> $nome </a> </div>
+
+                    $sql= "SELECT id_planta FROM post WHERE id_post'$i'";
+                    $resultado = pg_query($connect, $sql);
+                    $planta_mae = pg_fetch_array($resultado)[0];
                     
-                    </div> </li> </article>";
+
+                    if($_SESSION['numero_planta'] == $planta_mae) {
+                        echo 
+                        "<article> <li> <div class='planta'> 
+                            
+                            <div class='imagem'> <a href='receita.php?ap=$i'> <img src=''> </a> </div> 
+                            <div class='texto'> <a href='receita.php?ap=$i'> $nome </a> </div>
+                        
+                        </div> </li> </article>";
+                    }
                     
                 
                 }
