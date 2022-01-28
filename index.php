@@ -14,7 +14,7 @@ if (isset($_POST['btn-entrar'])):
 	
 	
 	if(empty($login) or empty($senha)):
-		$erros = "Os campos login e senha precisam ser preenchido";
+		$erros[] = "Os campos login e senha precisam ser preenchido";
 
 	else:
 
@@ -23,7 +23,7 @@ if (isset($_POST['btn-entrar'])):
 
         // Valida o email
 		if (!filter_var($login, FILTER_VALIDATE_EMAIL)):
-		    $erros = "Email inválido";
+		    $erros[] = "Email inválido";
 
 		else:
 
@@ -47,7 +47,7 @@ if (isset($_POST['btn-entrar'])):
 			header('Location: home.php');		
 
 		    else:
-			$erros="Usuário e senha não conferem.";
+			$erros[] = "Usuário e senha não conferem.";
 
 		    endif;
 
