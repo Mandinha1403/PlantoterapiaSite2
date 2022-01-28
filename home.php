@@ -50,28 +50,30 @@ endif;
 
                 <?php
 
-                while($layout == 0){
-                    $sql= "SELECT * FROM planta";
-                    $resultado = pg_query($connect, $sql);
-                    $rows = pg_num_rows($resultado);
-
-                    for($i = 1; $i <= $rows; $i++){
-                        $sql= "SELECT nome_planta FROM planta WHERE id_planta='$i'";
+                if($layout == 0){
+                    for($i = 1; $i <= $numero_plantas; $i++){
+                        $sql= "SELECT * FROM planta";
                         $resultado = pg_query($connect, $sql);
-                        $nome = pg_fetch_array($resultado)[0];
+                        $rows = pg_num_rows($resultado);
 
-                        $sql= "SELECT foto_planta FROM planta WHERE id_planta='$i'";
-                        $foto = pg_query($connect, $sql);
-                    
-                    
-                        echo 
-                        "<article> <li> <div class='planta'> 
-                            
-                            <div class='imagem'> <a href='planta.php?ap=$i'> <img src=''> </a> </div> 
-                            <div class='texto'> <a href='planta.php?ap=$i'> $nome </a> </div>
+                        for($i = 1; $i <= $rows; $i++){
+                            $sql= "SELECT nome_planta FROM planta WHERE id_planta='$i'";
+                            $resultado = pg_query($connect, $sql);
+                            $nome = pg_fetch_array($resultado)[0];
+
+                            $sql= "SELECT foto_planta FROM planta WHERE id_planta='$i'";
+                            $foto = pg_query($connect, $sql);
                         
-                        </div> </li> </article>";
-                    
+                        
+                            echo 
+                            "<article> <li> <div class='planta'> 
+                                
+                                <div class='imagem'> <a href='planta.php?ap=$i'> <img src=''> </a> </div> 
+                                <div class='texto'> <a href='planta.php?ap=$i'> $nome </a> </div>
+                            
+                            </div> </li> </article>";
+                        
+                        }
                     }
                 }
 
