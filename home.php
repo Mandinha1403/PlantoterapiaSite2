@@ -15,9 +15,8 @@ if(isset($_POST['btn-pesquisar'])):
     $resultado_plantas = pg_query($connect, $sql);
     $numero_plantas = pg_num_rows($resultado_plantas);
 
-    echo "Número plantas pesquisadas: $numero_plantas";
-
-    $nome_planta = pg_fetch_array($resultado_plantas)[$i];
+    $nome_planta = pg_fetch_array($resultado_plantas);
+    echo $nome_planta;
 
     $layout = 1;
 
@@ -79,7 +78,6 @@ endif;
 
                 if($layout == 1){
 
-                    echo "FUNCIONANDO";
 
                     /*
                     $erros = array();
@@ -92,12 +90,16 @@ endif;
                     $layout = 1;
                     */
 
-                    /*
+                    
                     for($i = 1; $i <= $numero_plantas; $i++){
-    
+                        //$nome_planta = pg_fetch_array($resultado_plantas)[$i];
+
+                        $sql= "SELECT nome_planta FROM planta WHERE id_planta='$i'";
+                        $resultado = pg_query($connect, $sql);
+                        //$nome_planta = pg_fetch_array($resultado)[0];
 
                         $sql= "SELECT foto_planta FROM planta WHERE id_planta='$i'";
-                        $foto_planta = pg_query($connect, $sql);
+                        $foto = pg_query($connect, $sql);
                     
                     
                         echo 
