@@ -88,7 +88,7 @@ endif;
                     */
 
                     while($row = mysqli_fetch_assoc($numero_plantas)) {
-                        var_dump($row);
+                        echo "ola";
                     }
                     /*
                         $sql= "SELECT nome_planta FROM planta WHERE id_planta='$i'";
