@@ -75,7 +75,7 @@ endif;
                         
                     }
                 }
-
+/               
                 if($layout == 1){
 
 
@@ -110,7 +110,7 @@ endif;
                         
                         </div> </li> </article>";
                     
-                    }*/
+                    }
                 }
                 
             
