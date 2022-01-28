@@ -30,9 +30,10 @@ if(isset($_POST['btn-criar'])):
             $resultado = pg_query($connect, $sql);
             $numero_plantas = pg_num_rows($resultado) + 1;
 
+            $tipopost = 3;
             $id_planta = $_SESSION['numero_planta'];
 
-            $sql="INSERT INTO post(id_post, id_planta, id_tppost, nome_post, descricao_post, foto_post) VALUES ($numero_plantas, $id_planta, 3, '$nome', $informacoes, $foto)";
+            $sql="INSERT INTO post(id_post, id_planta, id_tppost, nome_post, descricao_post, foto_post) VALUES ('$numero_plantas', '$id_planta', '$tipopost', '$nome', '$informacoes', '$foto');";
             pg_query($connect, $sql);
     
             // Fecha a conexão depois de armazenar os dados

@@ -83,7 +83,7 @@ endif;
                         <?php
                             if(!empty($erros["error"])):
                                 foreach($erros as $erro):
-                                    echo $erro;
+                                    echo $erro["error"];
                                 endforeach;
                             endif;
                         ?>
