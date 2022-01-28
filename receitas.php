@@ -31,6 +31,7 @@
                 session_start();
 
                 $planta_atual = $_SESSION['numero_planta'];
+                echo $planta_atual;
 
                 $sql= "SELECT * FROM post";
                 $resultado = pg_query($connect, $sql);
