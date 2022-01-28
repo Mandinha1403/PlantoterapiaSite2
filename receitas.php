@@ -30,7 +30,7 @@
 
                 session_start();
 
-                $sql= "SELECT * FROM post WHERE ";
+                $sql= "SELECT * FROM post";
                 $resultado = pg_query($connect, $sql);
                 $rows = pg_num_rows($resultado);
 

@@ -17,7 +17,7 @@ if(isset($_POST['btn-criar'])):
     else:
 
         if (!preg_match("/^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/", $nome)):
-            $erros[] = "O nome pode ter apenas letras e espaçps";
+            $erros[] = "O nome pode ter apenas letras e espaços";
         
         
         else:
