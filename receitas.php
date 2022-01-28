@@ -44,13 +44,8 @@
 
                     $sql= "SELECT id_planta FROM post WHERE id_post'$i'";
                     $resultado = pg_query($connect, $sql);
-                    $planta_mae = pg_fetch_array($resultado)[0];
-                    
-                    echo gettype($_SESSION['numero_planta']);
-                    echo $_SESSION['numero_planta'];
-
-                    echo gettype($planta_mae);
-                    echo $planta_mae;
+                    $planta_mae = int(pg_fetch_array($resultado)[0]);
+            
 
 
                     if($_SESSION['numero_planta'] == $planta_mae) {
