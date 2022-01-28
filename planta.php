@@ -57,6 +57,11 @@ endif;
             <button type="submit" name="btn-deletar"> Deletar Planta </button>
             </form>
 
+
+            <a href="adicionarestruturaquimica.php"> <button type="button" class="posts"> Estruturas Quimicas </button> </a>
+            <a href="adicionarmodoplantio.php"> <button type="button" class="posts"> Modos de Plantio </button> </a>
+            <a href="adicionarreceita.php"> <button type="button" class="posts"> Receitas </button> </a>
+
             <?php
 
             require_once 'db_connect.php';
