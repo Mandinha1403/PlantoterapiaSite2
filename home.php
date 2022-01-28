@@ -10,6 +10,7 @@ $layout = 0;
 if(isset($_POST['btn-pesquisar'])):
     $erros = array();
     $pesquisa = pg_escape_string($connect, $_POST['pesquisa']);
+    echo $pesquisa;
 
     $sql="SELECT * FROM planta WHERE nome_planta='$pesquisa'";
     $resultado_plantas = pg_query($connect, $sql);
