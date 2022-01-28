@@ -17,14 +17,14 @@ for($i = 1; $i <= $rows; $i++){
 
 // Código para deletar a planta
 if(isset($_POST['btn-deletar'])):
-    $numero_receita = $_SESSION['numero_post'];
-    $sql="DELETE FROM post WHERE id_post=$numero_receita";
+    $numero_estruturaquimica = $_SESSION['numero_post'];
+    $sql="DELETE FROM post WHERE id_post=$numero_estruturaquimica";
     $resultado = pg_query($connect, $sql);
 
-    $numero_novo = $numero_receita;
+    $numero_novo = $numero_estruturaquimica;
 
     // Muda a id de todas as outras plantas depois da planta deletada para um número abaixo do anterior
-    for($j = $numero_receita + 1; $j <= $rows; $j++) {
+    for($j = $numero_estruturaquimica + 1; $j <= $rows; $j++) {
         $sql="UPDATE post SET id_post='$numero_novo' WHERE id_post='$j'";
         $resultado = pg_query($connect, $sql);
         $numero_novo++;
@@ -33,7 +33,7 @@ if(isset($_POST['btn-deletar'])):
      // Fecha a conexão depois de armazenar os dados
      pg_close($connect);
 
-    header('Location: receitas.php');	
+    header('Location: estruturasquimicas.php');	
 endif;
 
 ?>
@@ -65,16 +65,16 @@ endif;
 
 
             // Pega a foto da planta
-            $sql= "SELECT foto_post FROM post WHERE id_post='$numero_receita'";
+            $sql= "SELECT foto_post FROM post WHERE id_post='$numero_estruturaquimica'";
             $foto = pg_query($connect, $sql);
 
             // Pega o nome da planta
-            $sql= "SELECT nome_post FROM post WHERE id_post='$numero_receita'";
+            $sql= "SELECT nome_post FROM post WHERE id_post='$numero_estruturaquimica'";
             $resultado = pg_query($connect, $sql);
             $nome = pg_fetch_array($resultado)[0];
 
             // Pega as informações da planta
-            $sql= "SELECT descricao_post FROM post WHERE id_post='$numero_receita'";
+            $sql= "SELECT descricao_post FROM post WHERE id_post='$numero_estruturaquimicaa'";
             $resultado = pg_query($connect, $sql);
             $informacoes = pg_fetch_array($resultado)[0];
 
