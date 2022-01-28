@@ -10,11 +10,12 @@ $layout = 0;
 if(isset($_POST['btn-pesquisar'])):
     $erros = array();
     $pesquisa = pg_escape_string($connect, $_POST['pesquisa']);
-    echo $pesquisa;
 
     $sql="SELECT * FROM planta WHERE nome_planta='$pesquisa'";
     $resultado_plantas = pg_query($connect, $sql);
     $numero_plantas = pg_num_rows($resultado_plantas);
+
+    echo "Número plantas pesquisadas: $numero_plantas";
 
     $nome_planta = pg_fetch_array($resultado_plantas)[$i];
 
@@ -39,10 +40,10 @@ endif;
 
       <div class="header_posts">
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST"> 
-        <input type="text" placeholder="Pesquisar..." name="pesquisa">
+        <input type="text" placeholder="Pesquisar..." name="pesquisa"> 
         <button type="submit" id="pesquisar" name="btn-pesquisar"> Pesquisar </button>
-        <a href="adicionarplanta.php"> <button type="adicionar_planta" id="adicionar_planta"> Adicionar Planta </button> </a>
         </form>
+        <a href="adicionarplanta.php"> <button type="adicionar_planta" id="adicionar_planta"> Adicionar Planta </button> </a>
       </div>
 
       <div class="plantas">
@@ -52,29 +53,27 @@ endif;
                 <?php
 
                 if($layout == 0){
-                    for($i = 1; $i <= $numero_plantas; $i++){
-                        $sql= "SELECT * FROM planta";
+                    $sql= "SELECT * FROM planta";
+                    $resultado = pg_query($connect, $sql);
+                    $rows = pg_num_rows($resultado);
+
+                    for($i = 1; $i <= $rows; $i++){
+                        $sql= "SELECT nome_planta FROM planta WHERE id_planta='$i'";
                         $resultado = pg_query($connect, $sql);
-                        $rows = pg_num_rows($resultado);
+                        $nome = pg_fetch_array($resultado)[0];
 
-                        for($i = 1; $i <= $rows; $i++){
-                            $sql= "SELECT nome_planta FROM planta WHERE id_planta='$i'";
-                            $resultado = pg_query($connect, $sql);
-                            $nome = pg_fetch_array($resultado)[0];
-
-                            $sql= "SELECT foto_planta FROM planta WHERE id_planta='$i'";
-                            $foto = pg_query($connect, $sql);
-                        
-                        
-                            echo 
-                            "<article> <li> <div class='planta'> 
-                                
-                                <div class='imagem'> <a href='planta.php?ap=$i'> <img src=''> </a> </div> 
-                                <div class='texto'> <a href='planta.php?ap=$i'> $nome </a> </div>
+                        $sql= "SELECT foto_planta FROM planta WHERE id_planta='$i'";
+                        $foto = pg_query($connect, $sql);
+                    
+                    
+                        echo 
+                        "<article> <li> <div class='planta'> 
                             
-                            </div> </li> </article>";
+                            <div class='imagem'> <a href='planta.php?ap=$i'> <img src=''> </a> </div> 
+                            <div class='texto'> <a href='planta.php?ap=$i'> $nome </a> </div>
                         
-                        }
+                        </div> </li> </article>";
+                        
                     }
                 }
 
