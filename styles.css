@@ -716,6 +716,10 @@ footer {
     border-radius: 10px;
 }
 
+.planta_especifico .posts {
+    background-color: #FF8080;
+    margin-right: 5px;
+}
 
 .planta_especifico .imagem {
     height: 35%;

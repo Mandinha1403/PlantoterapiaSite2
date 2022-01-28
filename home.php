@@ -6,7 +6,8 @@ session_start();
 
 $layout = 0;
 
-// Verifica se na hora de clicar o botão "criar", todos os campos foram preenchidos
+// PARTE DO CÓDIGO PARA A PESQUISA
+/*
 if(isset($_POST['btn-pesquisar'])):
     $erros = array();
     $pesquisa = pg_escape_string($connect, $_POST['pesquisa']);
@@ -18,6 +19,7 @@ if(isset($_POST['btn-pesquisar'])):
     $layout = 1;
 
 endif;	
+*/ 
 
 ?>
 <!DOCTYPE html>
@@ -73,28 +75,12 @@ endif;
                     }
                 }
                
+                /*
                 if($layout == 1){
 
-                    for($i = 0; $i < $numero_plantas; $i++){
-
-                        $sql= "SELECT nome_planta FROM planta WHERE nome_planta='$pesquisa'";
-                        $resultado = pg_query($connect, $sql);
-                        $nome_planta = pg_fetch_array($resultado)[$i];
-
-                        $sql= "SELECT foto_planta FROM planta WHERE nome_planta='$pesquisa'";
-                        $foto = pg_query($connect, $sql);
-                    
-                    
-                        echo 
-                        "<article> <li> <div class='planta'> 
-                            
-                            <div class='imagem'> <a href='planta.php?ap=$idplanta'> <img src=''> </a> </div> 
-                            <div class='texto'> <a href='planta.php?ap=$idplanta'> $nome_planta </a> </div>
-                        
-                        </div> </li> </article>";
-                    
-                    }
+                    // Código para display de itens pesquisados
                 }
+                */
                 
             
 
