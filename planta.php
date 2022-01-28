@@ -70,7 +70,7 @@ endif;
 
 
             // Pega a foto da planta
-            $sql= "SELECT foto_planta FROM planta WHERE id_planta='$i'";
+            $sql= "SELECT foto_planta FROM planta WHERE id_planta='$numero_planta'";
             $foto = pg_query($connect, $sql);
 
             // Pega o nome da planta
