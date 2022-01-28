@@ -24,7 +24,6 @@ if(isset($_POST['btn-criar'])):
 
             
             $nome = filter_var($nome, FILTER_SANITIZE_STRING);
-            
 
             // Descobre número de posts já existentes
             $sql="SELECT * FROM post";
@@ -33,7 +32,7 @@ if(isset($_POST['btn-criar'])):
 
             $id_planta = $_SESSION['numero_planta'];
 
-            $sql="INSERT INTO post(id_post, id_planta, id_tppost, nome_post, descricao_post, foto_post) VALUES ('$numero_plantas', '$id_planta', 3, '$nome', $informacoes, $foto)";
+            $sql="INSERT INTO post(id_post, id_planta, id_tppost, nome_post, descricao_post, foto_post) VALUES ($numero_plantas, $id_planta, 3, '$nome', $informacoes, $foto)";
             pg_query($connect, $sql);
     
             // Fecha a conexão depois de armazenar os dados
