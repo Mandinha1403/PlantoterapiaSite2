@@ -38,11 +38,11 @@ endif;
 
 
       <div class="header_posts">
-
+        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST"> 
         <input type="text" placeholder="Pesquisar..." name="pesquisa">
         <button type="submit" id="pesquisar" name="btn-pesquisar"> Pesquisar </button>
         <a href="adicionarplanta.php"> <button type="adicionar_planta" id="adicionar_planta"> Adicionar Planta </button> </a>
-
+        </form>
       </div>
 
       <div class="plantas">
