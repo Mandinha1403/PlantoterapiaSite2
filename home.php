@@ -75,22 +75,8 @@ endif;
                
                 if($layout == 1){
 
+                    for($i = 1; $i <= $numero_plantas; $i++){
 
-                    /*
-                    $erros = array();
-                    $pesquisa = pg_escape_string($connect, $_POST['pesquisa']);
-
-                    $sql="SELECT * FROM planta WHERE nome_planta='$pesquisa'";
-                    $resultado_plantas = pg_query($connect, $sql);
-                    $numero_plantas = pg_num_rows($resultado_plantas);
-
-                    $layout = 1;
-                    */
-
-                    while($row = mysqli_fetch_assoc($resultado_plantas)) {
-                        echo "ola";
-                    }
-                    /*
                         $sql= "SELECT nome_planta FROM planta WHERE id_planta='$i'";
                         $resultado = pg_query($connect, $sql);
                         $nome_planta = pg_fetch_array($resultado)[0];
@@ -107,7 +93,7 @@ endif;
                         
                         </div> </li> </article>";
                     
-                    }*/
+                    }
                 }
                 
             
