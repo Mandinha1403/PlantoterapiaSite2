@@ -4,16 +4,19 @@ require_once 'db_connect.php';
 
 session_start();
 
+$erros = array();
+
+$erros["success"] = 1;
+
 // Verifica se na hora de clicar o botão "entrar", todos os campos foram preenchidos
 if (isset($_POST['btn-entrar'])):
 	//echo "Clicou";
-	$erros = array();
 	$login = pg_escape_string($connect, $_POST['login']);
 	$senha = pg_escape_string($connect, $_POST['senha']);
 	
 	
 	if(empty($login) or empty($senha)):
-		$erros[] = "Os campos login e senha precisam ser preenchido";
+		$erros["error"] = "Os campos login e senha precisam ser preenchido";
 
 	else:
 
@@ -22,7 +25,7 @@ if (isset($_POST['btn-entrar'])):
 
         // Valida o email
 		if (!filter_var($login, FILTER_VALIDATE_EMAIL)):
-		    $erros[] = "Email inválido";
+		    $erros["error"] = "Email inválido";
 
 		else:
 
@@ -46,11 +49,11 @@ if (isset($_POST['btn-entrar'])):
 			header('Location: home.php');		
 
 		    else:
-			$erros[]="Usuário e senha não conferem.";
+			$erros["error"]="Usuário e senha não conferem.";
 
 		    endif;
 
-            	endif;
+        endif;
 
 	endif;	
 
