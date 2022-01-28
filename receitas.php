@@ -42,19 +42,17 @@
 
                     $sql= "SELECT id_planta FROM post WHERE id_post='$i'";
                     $resultado = pg_query($connect, $sql);
-                    $planta_mae = (int) pg_fetch_array($resultado)[0];
+                    $planta_mae = pg_fetch_array($resultado)[0];
             
 
-
-                    if($planta_atual == $planta_mae) {
-                        echo 
-                        "<article> <li> <div class='planta'> 
-                            
-                            <div class='imagem'> <a href='receita.php?ap=$i'> <img src=''> </a> </div> 
-                            <div class='texto'> <a href='receita.php?ap=$i'> $nome </a> </div>
+                    echo 
+                    "<article> <li> <div class='planta'> 
                         
-                        </div> </li> </article>";
-                    }
+                        <div class='imagem'> <a href='receita.php?ap=$i'> <img src=''> </a> </div> 
+                        <div class='texto'> <a href='receita.php?ap=$i'> $nome </a> </div>
+                    
+                    </div> </li> </article>";
+                    
                     
                 
                 }
