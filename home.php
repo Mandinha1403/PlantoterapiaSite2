@@ -75,7 +75,7 @@ endif;
                         
                     }
                 }
-/               
+               
                 if($layout == 1){
 
 
