@@ -75,13 +75,13 @@ endif;
                
                 if($layout == 1){
 
-                    for($i = 1; $i <= $numero_plantas; $i++){
+                    for($i = 0; $i < $numero_plantas; $i++){
 
-                        $sql= "SELECT nome_planta FROM planta WHERE id_planta='$i'";
+                        $sql= "SELECT nome_planta FROM planta WHERE nome_planta='$pesquisa'";
                         $resultado = pg_query($connect, $sql);
-                        $nome_planta = pg_fetch_array($resultado)[0];
+                        $nome_planta = pg_fetch_array($resultado)[$i];
 
-                        $sql= "SELECT foto_planta FROM planta WHERE id_planta='$i'";
+                        $sql= "SELECT foto_planta FROM planta WHERE nome_planta='$pesquisa'";
                         $foto = pg_query($connect, $sql);
                     
                     
