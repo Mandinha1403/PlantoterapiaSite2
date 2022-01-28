@@ -30,29 +30,28 @@
 
                 session_start();
 
-                if($layout == 0){
-                    $sql= "SELECT * FROM post WHERE ";
+                $sql= "SELECT * FROM post WHERE ";
+                $resultado = pg_query($connect, $sql);
+                $rows = pg_num_rows($resultado);
+
+                for($i = 1; $i <= $rows; $i++){
+                    $sql= "SELECT nome_post FROM post WHERE id_post='$i'";
                     $resultado = pg_query($connect, $sql);
-                    $rows = pg_num_rows($resultado);
+                    $nome = pg_fetch_array($resultado)[0];
 
-                    for($i = 1; $i <= $rows; $i++){
-                        $sql= "SELECT nome_post FROM post WHERE id_post='$i'";
-                        $resultado = pg_query($connect, $sql);
-                        $nome = pg_fetch_array($resultado)[0];
-
-                        $sql= "SELECT foto_post FROM post WHERE id_post'$i'";
-                        $foto = pg_query($connect, $sql);
-                    
-                    
-                        echo 
-                        "<article> <li> <div class='planta'> 
-                            
-                            <div class='imagem'> <a href='receita.php?ap=$i'> <img src=''> </a> </div> 
-                            <div class='texto'> <a href='receita.php?ap=$i'> $nome </a> </div>
+                    $sql= "SELECT foto_post FROM post WHERE id_post'$i'";
+                    $foto = pg_query($connect, $sql);
+                
+                
+                    echo 
+                    "<article> <li> <div class='planta'> 
                         
-                        </div> </li> </article>";
-                        
-                    }
+                        <div class='imagem'> <a href='receita.php?ap=$i'> <img src=''> </a> </div> 
+                        <div class='texto'> <a href='receita.php?ap=$i'> $nome </a> </div>
+                    
+                    </div> </li> </article>";
+                    
+                
                 }
             
                 ?>
