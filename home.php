@@ -11,7 +11,7 @@ if(isset($_POST['btn-pesquisar'])):
     $erros = array();
     $pesquisa = pg_escape_string($connect, $_POST['pesquisa']);
 
-    $sql="SELECT * FROM planta WHERE nome_planta='$pesquisa' LIKE CONCAT('%',nome_planta,'%');";
+    $sql="SELECT * FROM planta WHERE nome_planta='$pesquisa';";
     $resultado_plantas = pg_query($connect, $sql);
     $numero_plantas = pg_num_rows($resultado_plantas);
 
@@ -79,7 +79,8 @@ endif;
 
                 if($layout == 1){
 
-                    echo $resultado_plantas;
+                    echo "FUNCIONANDO";
+
                     /*
                     $erros = array();
                     $pesquisa = pg_escape_string($connect, $_POST['pesquisa']);
