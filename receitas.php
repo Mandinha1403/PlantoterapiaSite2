@@ -17,7 +17,7 @@
         <input type="text" placeholder="Pesquisar..." name="pesquisa"> 
         <button type="submit" id="pesquisar" name="btn-pesquisar"> Pesquisar </button>
         </form>
-        <a href="adicionarplanta.php"> <button type="adicionar_planta" id="adicionar_planta"> Adicionar Receita </button> </a>
+        <a href="adicionarreceita.php"> <button type="adicionar_planta" id="adicionar_planta"> Adicionar Receita </button> </a>
       </div>
 
       <div class="plantas">

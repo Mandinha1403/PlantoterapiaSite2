@@ -79,8 +79,8 @@ endif;
             
             <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST"> 
             <div class="item"> <input type="file" id="uploadfotoplanta" name="planta" accept="image/png, image/jpeg" onchange="readURL(this);"> </div>
-            <div class="item"> <input type="text" id="nomeplanta" name="nomeplanta" placeholder="Insira o nome da planta"> </div>
-            <div class="item"> <textarea name="informacoes" cols="40" rows="10" placeholder="Insire as informações sobre a planta"></textarea> </div>
+            <div class="item"> <input type="text" id="nomeplanta" name="nomeplanta" placeholder="Insira o nome da receita"> </div>
+            <div class="item"> <textarea name="informacoes" cols="40" rows="10" placeholder="Insire as informações sobre a receita"></textarea> </div>
             <div class="item"> <button type="submit" name="btn-criar"> Criar </a> </button> </div>
         
         </div>
